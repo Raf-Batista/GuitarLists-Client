@@ -1,7 +1,9 @@
+const URL = 'https://guitar-lists-api.herokuapp.com'
+
 const editGuitar = (guitar, history, currentUser) => {
     return dispatch => {
         if(currentUser.token){
-            return fetch(`http://localhost:3000/users/${guitar.user_id}/guitars/${guitar.id}`, {
+            return fetch(`${URL}/users/${guitar.user_id}/guitars/${guitar.id}`, {
               method: 'PATCH',
               body: JSON.stringify({guitar, token: currentUser.token}),
               headers:{

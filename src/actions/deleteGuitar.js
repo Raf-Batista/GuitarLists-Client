@@ -1,7 +1,9 @@
+const URL = 'https://guitar-lists-api.herokuapp.com'
+
 const deleteGuitar = (currentUser, guitarId, history) => {
     return dispatch => {
         if(currentUser.token){
-            return fetch(`http://localhost:3000/users/${currentUser.id}/guitars/${guitarId}`, {
+            return fetch(`${URL}/users/${currentUser.id}/guitars/${guitarId}`, {
               method: 'DELETE',
               body: JSON.stringify({user_id: currentUser.id, id: guitarId, token: localStorage.getItem('token')}),
               headers:{

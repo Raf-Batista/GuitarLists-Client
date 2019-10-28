@@ -1,6 +1,8 @@
+const URL = 'https://guitar-lists-api.herokuapp.com'
+
 const login = (currentUser) => {
   return dispatch => {
-    return fetch('http://localhost:3000/login', {
+    return fetch('${URL}/login', {
       method: 'POST',
       body: JSON.stringify(currentUser),
       headers:{

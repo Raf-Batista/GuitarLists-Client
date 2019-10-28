@@ -1,7 +1,9 @@
+const URL = 'https://guitar-lists-api.herokuapp.com'
+
 const createGuitar = (guitar, currentUser, history) => {
   return dispatch => {
     if(currentUser.token){
-      return fetch(`http://localhost:3000/users/${currentUser.id}/guitars`, {
+      return fetch(`${URL}/users/${currentUser.id}/guitars`, {
         method: 'POST',
         body: JSON.stringify({guitar: guitar, token: currentUser.token}),
         headers:{

@@ -28,6 +28,10 @@ class App extends Component {
    }
 }
 
+  componentWillUnmount() {
+    localStorage.clear()
+  }
+
   render(){
     return (
       <div>

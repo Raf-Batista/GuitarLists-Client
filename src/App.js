@@ -19,17 +19,18 @@ import Error from './components/Error';
 
 class App extends Component {
   componentDidMount(){
-   if(!this.props.users.length) {
+    if(!this.props.users.length) {
+      this.props.fetchUsers()
+    }
+
+    if(!this.props.guitars.length) {  
+      this.props.fetchGuitars()
+    }
+  }
+
+  componentWillMount() {
     this.props.fetchUsers()
-   }
-
-   if(!this.props.guitars.length) {
     this.props.fetchGuitars()
-   }
-}
-
-  componentWillUnmount() {
-    localStorage.clear()
   }
 
   render(){
